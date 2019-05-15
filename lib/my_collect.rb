@@ -2,7 +2,7 @@ def my_collect(array)
   i = 0
   collection = []
   while i < array.length
-   yield collection << array([i])
+   collection << array([i])
    i += 1 
  end
  array
@@ -11,13 +11,12 @@ def my_collect(array)
 end
 
 
-
-
-def my_each(array_collection)
-  i = 0 
-  while i < array_collection.length
-  yield(array_collection[i])
-  i += 1
+def my_collect(collection)
+  i = 0
+  new_collection = []
+  while i < collection.length
+    new_collection << yield(collection[i])
+    i += 1
   end
-array_collection
-end 	
+  new_collection
+end
